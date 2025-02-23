@@ -1,6 +1,8 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { COURSES } from '../../db-data';
 import { Course } from '../model/course';
+import { CommonModule } from '@angular/common'; // Import CommonModule (make use of ngClass)
+
 
 @Component({
   selector: 'course-card',
@@ -24,6 +26,15 @@ export class CourseCardComponent {
   onCourseViewed() {
     console.log('Course card component - Course viewed.');
     this.courseSelected.emit(this.course);
+  }
+
+  cardClasses() {
+    return {
+      'beginner': this.course.category == 'BEGINNER',
+    };
+    // if (this.course.category == 'BEGINNER') {
+    //   return ['beginner'];
+    // }
   }
 
 }
