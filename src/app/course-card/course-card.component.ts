@@ -15,6 +15,9 @@ export class CourseCardComponent {
   //title: string = '';
   course!:Course;    // Use ! to indicate that this will be initialized later
 
+  @Input({required:true})
+  index: number = 0;
+
   @Output()
   courseSelected = new EventEmitter<Course>();
 
