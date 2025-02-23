@@ -182,6 +182,7 @@
     <div class="left-side">
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        (click)="onLogoClicked()"
         viewBox="0 0 982 239"
         fill="none"
         class="angular-logo"
@@ -225,9 +226,16 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
+      <!--<h1>Hello, {{ title }}</h1>-->
+      <!--<h1>Hello, {{ courseTitle }}</h1>-->
+      <h1>Hello, {{ data.title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <!--<input class="demo" type="text" placeholder="Type here..." value="Test"/>-->
+      <!--<input class="demo" type="text" placeholder="Type here..." [value]="data.title"/>-->
+      <!--<input class="demo" type="text" placeholder="Type here..." [value]="'Test'"/>-->
+      <input class="demo" (keyup)="onKeyUp(titleInput.value)" type="text" placeholder="Type here..." [value]="data.title" #titleInput />
     </div>
+    
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
