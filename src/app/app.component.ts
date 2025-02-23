@@ -13,5 +13,8 @@ export class AppComponent {
     rxjsCourse = COURSES[1];
     ngrxCourse = COURSES[2];
 
+    onCardClicked() {
+        console.log('Card was clicked');
+    }
 
 }

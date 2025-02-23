@@ -15,4 +15,8 @@ export class CourseCardComponent {
   //title: string = '';
   course!:Course;    // Use ! to indicate that this will be initialized later
 
+  onCourseViewed() {
+    console.log('Course card component - Course viewed.');
+  }
+
 }
