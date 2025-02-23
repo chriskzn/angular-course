@@ -7,6 +7,18 @@
 
 <!--<h1>{{ coreCourse.description }}</h1>-->
 
+<div class="demo">
+<div>Start Date: {{startDate | date: 'MMM/dd/yyyy'}}</div>
+<div>Title: {{title | titlecase}}</div>
+<!-- <div>{{price | number: '3.3-5'}}</div> -->
+<div>Price: {{price | currency : 'EUR'}}</div>
+<div>Percentage: {{rate | percent}}</div>
+
+<!-- Velow can be used for debugging purposes -->
+<!-- {{ courses | json}} -->
+
+</div>
+
 <div class="courses">
 
     @for (course of courses; track course.id; let index = $index; let count = $count; let first = $first; let last = $last; let even = $even; let odd = $odd) {
