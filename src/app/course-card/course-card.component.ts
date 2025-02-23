@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { COURSES } from '../../db-data';
 import { Course } from '../model/course';
 
@@ -15,8 +15,12 @@ export class CourseCardComponent {
   //title: string = '';
   course!:Course;    // Use ! to indicate that this will be initialized later
 
+  @Output()
+  courseSelected = new EventEmitter<Course>();
+
   onCourseViewed() {
     console.log('Course card component - Course viewed.');
+    this.courseSelected.emit(this.course);
   }
 
 }
