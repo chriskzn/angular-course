@@ -1,6 +1,25 @@
+// interface Course {
+//     id: number;
+//     description: string;
+//     iconUrl: string;
+//     longDescription: string;
+//     category: string;
+//     lessonsCount: number;
+// }
+
+//import { Course } from './model/course';
+
+export interface Course {
+    id: number;
+    description: string;
+    iconUrl: string;
+    longDescription: string;
+    category: string;
+    lessonsCount: number;
+}
 
 
-export const COURSES: any = [
+export const COURSES: Course[] = [
 
     {
         id: 1,
@@ -24,7 +43,8 @@ export const COURSES: any = [
         description: 'NgRx In Depth',
         longDescription: "Learn the modern Ngrx Ecosystem, including Store, Effects, Router Store, Ngrx Entity, Dev Tools and Schematics.",
         iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/angular-ngrx-course.png',
-        category: 'ADVANCED'
+        category: 'ADVANCED',
+        lessonsCount: 10
     },
 
     {
@@ -56,33 +76,37 @@ export const COURSES: any = [
         description: 'Angular Advanced Course',
         longDescription: "Learn Advanced Angular functionality typically used in Library Development. Advanced Components, Directives, Testing, Npm",
         iconUrl: 'https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png',
-        category: 'ADVANCED'
+        category: 'ADVANCED',
+        lessonsCount: 1
     },
     {
         id: 8,
         description: 'Complete Typescript Course',
         longDescription: "Complete Guide to Typescript From Scratch: Learn the language in-depth and use it to build a Node REST API.",
         iconUrl: 'https://angular-academy.s3.amazonaws.com/thumbnails/typescript-2-small.png',
-        category: 'BEGINNER'
+        category: 'BEGINNER',
+        lessonsCount: 1
     },
     {
         id: 9,
         description: 'Angular Architecture Course',
         longDescription: "Learn the core RxJs Observable Pattern as well and many other Design Patterns for building Reactive Angular Applications.",
         iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png',
-        category: 'BEGINNER'
+        category: 'BEGINNER',
+        lessonsCount: 1
     },
     {
         id: 10,
         description: "Angular Material Course",
         iconUrl: "https://s3-us-west-1.amazonaws.com/angular-university/course-images/material_design.png",
         longDescription: "Build Applications with the official Angular Widget Library",
-        category: 'ADVANCED'
+        category: 'ADVANCED',
+        lessonsCount: 1
     }
 
 ];
 
 
-export function findCourseById(courseId:number) {
-    return COURSES.find(course => course.id === courseId);
+export function findCourseById(courseId:number): Course | undefined {
+    return COURSES.find((course: Course) => course.id === courseId);
 }
