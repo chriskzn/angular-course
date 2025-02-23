@@ -9,14 +9,19 @@
 
 <div class="courses">
 
+    @for (course of courses; track course.id) {
+        <!-- <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card> -->
+        <course-card 
+        [course]="course" (courseSelected)="onCourseSelected($event)" />
+    }
     <!-- <course-card (click)="onCardClicked()" [course]="coreCourse"></course-card> -->
-    <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card>
+    <!-- <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card> -->
 
     <!-- Two sets -->
-    <course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></course-card>
+    <!-- <course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></course-card> -->
 
     <!-- Three sets -->
-    <course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></course-card>
+    <!-- <course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></course-card> -->
 
     <!-- <div class="course-card">
 
